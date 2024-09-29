@@ -7,7 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     // Fehlermeldung verstecken, bevor die Überprüfung beginnt
     document.getElementById('loginError').style.display = 'none';
 
-    if (username === 'spieler1' && password === 'passwort123') {
+    if (username === 'spieler1' && password === '123') {
         alert('Login erfolgreich!');
         // Hier kannst du den Spieler zu einer anderen Seite weiterleiten, wo er seine Daten einsehen kann.
         window.location.href = 'spieler-daten.html';
