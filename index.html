@@ -10,11 +10,11 @@
     <header>
         <h1>Trainingsdaten<br>
             Tracker</h1>
-
     </header>
 
     <section>
-        <form id="loginForm">
+        <!-- Login-Bereich -->
+        <form id="loginForm" onsubmit="loginUser(event)">
             <label for="username">Benutzername:</label>
             <input type="text" id="username" name="username" required>
 
@@ -24,12 +24,74 @@
             <button type="submit">Login</button>
         </form>
         <p id="loginError" class="error-message"></p>
+
+        <!-- Registrierungsbereich -->
+        <h2>Registrierung</h2>
+        <form id="registerForm" onsubmit="registerUser(event)">
+            <label for="registerUsername">Benutzername:</label>
+            <input type="text" id="registerUsername" name="registerUsername" required>
+
+            <label for="registerPassword">Passwort:</label>
+            <input type="password" id="registerPassword" name="registerPassword" required>
+
+            <button type="submit">Registrieren</button>
+        </form>
+        <p id="registerError" class="error-message"></p>
     </section>
 
     <footer>
         <p>&copy; 2024 Coach HaSan71</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Login-Funktion
+        async function loginUser(event) {
+            event.preventDefault(); // Verhindere das Standardverhalten des Formulars
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('http://127.0.0.1:5000/login', {  // Stelle sicher, dass die URL korrekt ist
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }), // Sende den Benutzernamen und das Passwort als JSON
+            });
+
+            const data = await response.json();
+
+            // Überprüfe das Ergebnis der API-Antwort
+            if (data.success) {
+                window.location.href = '/spieler-daten'; // Leite zur "spieler-daten"-Seite weiter
+            } else {
+                document.getElementById('loginError').innerText = data.message; // Zeige Fehlermeldung an
+            }
+        }
+
+        // Registrierung-Funktion
+        async function registerUser(event) {
+            event.preventDefault(); // Verhindere das Standardverhalten des Formulars
+
+            const username = document.getElementById('registerUsername').value;
+            const password = document.getElementById('registerPassword').value;
+
+            const response = await fetch('http://127.0.0.1:5000/register', {  // Stelle sicher, dass die URL korrekt ist
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert('Benutzer erfolgreich registriert!');
+            } else {
+                document.getElementById('registerError').innerText = data.message; // Zeige Fehlermeldung an
+            }
+        }
+    </script>
 </body>
 </html>
