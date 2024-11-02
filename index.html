@@ -1,33 +1,40 @@
+<!-- Haupt-HTML-Datei, gibt einen Überlick über dei Struktur der Seite und welche Abschnitte geplant  sind -->
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basketballtrainer Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Definiert das Dokument als HTML5 -->
+    <meta charset="UTF-8"> <!-- Zeichencodierung UTF-8, unterstützt Sonderzeichen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimiert die Seite für mobile Geräte -->
+    <title>Basketballtrainer Login</title> <!-- Titel, der in der Browser-Registerkarte erscheint -->
+    <link rel="stylesheet" href="styles.css"> <!-- Verlinkt die externe CSS-Datei für das Design -->
 </head>
 <body>
+    <!-- Kopfbereich der Seite mit einer Überschrift -->
     <header>
-        <h1>Basketballtrainer und -Spieler</h1>
+        <h1>Basketballtrainer und -Spieler</h1> <!-- Haupttitel der Seite -->
     </header>
 
+    <!-- Abschnitt mit dem Login-Formular -->
     <section>
-        <form id="loginForm">
-            <label for="username">Benutzername:</label>
-            <input type="text" id="username" name="username" required>
+        <form id="loginForm"> <!-- Formular für den Login, ID dient zum Ansprechen im JavaScript -->
+            <label for="username">Benutzername:</label> <!-- Beschriftung für das Benutzernamenfeld -->
+            <input type="text" id="username" name="username" required> <!-- Eingabefeld für den Benutzernamen -->
 
-            <label for="password">Passwort:</label>
-            <input type="password" id="password" name="password" required>
+            <label for="password">Passwort:</label> <!-- Beschriftung für das Passwortfeld -->
+            <input type="password" id="password" name="password" required> <!-- Eingabefeld für das Passwort -->
 
-            <button type="submit">Login</button>
+            <button type="submit">Login</button> <!-- Login-Button zum Absenden des Formulars -->
         </form>
-        <p id="loginError" class="error-message"></p>
+        <p id="loginError" class="error-message"></p> <!-- Leer, zur Anzeige von Fehlern beim Login -->
     </section>
 
+    <!-- Fußbereich der Seite -->
     <footer>
-        <p>&copy; 2024 Basketballtrainer</p>
+        <p>&copy; 2024 Basketballtrainer</p> <!-- Copyright-Hinweis -->
     </footer>
 
+    <!-- Verlinkt das externe JavaScript-File für Login-Logik und interaktive Funktionen -->
     <script src="script.js"></script>
 </body>
 </html>
