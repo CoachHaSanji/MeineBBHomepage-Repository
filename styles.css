@@ -23,21 +23,6 @@ header {
     text-align: center;
 }
 
-/* Stil für die H1-Überschrift im Header */
-h1 {
-    font-size: 2.5em; /* Schriftgröße anpassen */
-    color: rgb(10, 10, 10); /* Textfarbe anpassen */
-    margin: 0; /* Standard-Margin entfernen */
-}
-
-/* Stil für die H2-Überschrift im Hauptbereich */
-h2 {
-    font-size: 2em; /* Schriftgröße anpassen */
-    color: #ca9d17; /* Textfarbe anpassen */
-    margin-top: 20px; /* Abstand oben hinzufügen */
-    text-align: center; /* Text zentrieren */
-}
-
 .login-section {
     background-color: white;
     padding: 20px;

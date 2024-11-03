@@ -1,31 +1,27 @@
-<!-- Haupt-HTML-Datei, gibt einen Überlick über dei Struktur der Seite und welche Abschnitte geplant  sind -->
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <!-- Definiert das Dokument als HTML5 -->
-    <meta charset="UTF-8"> <!-- Zeichencodierung UTF-8, unterstützt Sonderzeichen -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimiert die Seite für mobile Geräte -->
-    <title>Basketballtrainer Login</title> <!-- Titel, der in der Browser-Registerkarte erscheint -->
-    <link rel="stylesheet" href="styles.css"> <!-- Verlinkt die externe CSS-Datei für das Design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketballtrainer Login</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Kopfbereich der Seite mit einer Überschrift -->
     <header>
         <h1>Trainingsdaten<br>
             Tracker</h1>
     </header>
 
-    <!-- Abschnitt mit dem Login-Formular -->
     <section>
-        <form id="loginForm">
+        <!-- Login-Bereich -->
+        <form id="loginForm" onsubmit="loginUser(event)">
             <label for="username">Benutzername:</label>
             <input type="text" id="username" name="username" required>
 
-            <label for="password">Passwort:</label> <!-- Beschriftung für das Passwortfeld -->
-            <input type="password" id="password" name="password" required> <!-- Eingabefeld für das Passwort -->
+            <label for="password">Passwort:</label>
+            <input type="password" id="password" name="password" required>
 
-            <button type="submit">Login</button> <!-- Login-Button zum Absenden des Formulars -->
+            <button type="submit">Login</button>
         </form>
         <p id="loginError" class="error-message"></p>
 
@@ -43,9 +39,8 @@
         <p id="registerError" class="error-message"></p>
     </section>
 
-    <!-- Fußbereich der Seite -->
     <footer>
-        <p>&copy; 2024 Basketballtrainer</p>
+        <p>&copy; 2024 Coach HaSan71</p>
     </footer>
 
     <script>
