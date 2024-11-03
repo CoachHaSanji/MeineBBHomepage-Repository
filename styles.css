@@ -6,8 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #000000;
-    color: #fbf7f7;
+    background: linear-gradient(to bottom, #415b78, #000000); /* Farbverlauf von Orange nach Schwarz */
+    color: #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,8 +16,8 @@ body {
 }
 
 header {
-    background-color: #dfac22;
-    color: rgb(10, 10, 10);
+    background-color: #333;
+    color: #fffffe;
     padding: 20px;
     width: 100%;
     text-align: center;
